@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Manjul Bhattarai Portfolio - Dark Slate & Teal Design System */
+
+@layer base {
+  :root {
+    /* Light Mode - Clean & Professional */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Teal Primary */
+    --primary: 174 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Slate Secondary */
+    --secondary: 215 20% 94%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 215 20% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Teal Accent */
+    --accent: 174 62% 95%;
+    --accent-foreground: 174 62% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 174 62% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(174 62% 40%), hsl(185 70% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(215 25% 98%) 0%, hsl(210 20% 95%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(215 25% 15% / 0.08);
+    --shadow-elevated: 0 10px 40px -10px hsl(215 25% 15% / 0.15);
+  }
+
+  .dark {
+    /* Dark Mode - Slate & Teal */
+    --background: 220 20% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Teal Primary (brighter for dark mode) */
+    --primary: 174 70% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    /* Slate Secondary */
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Teal Accent */
+    --accent: 174 70% 15%;
+    --accent-foreground: 174 70% 60%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 174 70% 50%;
+
+    /* Custom tokens - dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(174 70% 50%), hsl(185 75% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 10%) 0%, hsl(220 18% 8%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent-foreground bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .glow-border {
+    @apply relative before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-gradient-to-r before:from-primary before:to-accent-foreground before:-z-10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

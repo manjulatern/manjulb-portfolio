@@ -1,0 +1,10 @@
+export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { StatsBar } from "./StatsBar";
+export { About } from "./About";
+export { Services } from "./Services";
+export { Industries } from "./Industries";
+export { Achievements } from "./Achievements";
+export { TechStack } from "./TechStack";
+export { CTA } from "./CTA";
+export { Footer } from "./Footer";
